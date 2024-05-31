@@ -2,18 +2,18 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   height: 100vh;
-  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+  /* background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
     radial-gradient(
       91% 146%,
       rgba(255, 255, 255, 0.5) 47%,
       rgba(0, 0, 0, 0.5) 100%
     );
-  background-blend-mode: screen;
+  background-blend-mode: screen; */
 }
 
 .container {
   padding-top: 30px;
-  padding-bottom: 40px;
+  padding-bottom: 70px;
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -57,6 +57,56 @@ header {
   opacity: 0;
 }
 
+.cards-container {
+  display: grid;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background-color: #f1f1f1;
+  min-height: 250px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+@media (max-width: 950px) {
+  .cards-container {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media (max-width: 480px) {
   .carousel {
     height: 350px;
@@ -78,5 +128,15 @@ header {
     padding-bottom: 40px;
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .cards-container {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
