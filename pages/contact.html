@@ -21,67 +21,33 @@
             <b>Cuéntanos qué buscas:</b> Completa el formulario a continuación
             con los detalles del álbum, artista o edición especial que deseas.
           </p>
-          <form>
-            <input
-              type="text"
-              class="minimal-input"
-              placeholder="Nombre del álbum"
-            />
-            <input
-              type="text"
-              class="minimal-input"
-              placeholder="Nombre del artista o banda"
-            />
-            <input
-              type="email"
-              class="minimal-input"
-              placeholder="Correo electrónico de contacto"
-            />
-
+          <form id="contactForm" method="POST">
+            <input type="text" class="minimal-input" name="nombre_album" placeholder="Nombre del álbum" required>
+            <input type="text" class="minimal-input" name="nombre_artista" placeholder="Nombre del artista o banda" required>
+            <input type="email" class="minimal-input" name="correo_electronico" placeholder="Correo electrónico de contacto" required>
             <div class="radio-group">
               <label>
-                <input
-                  type="radio"
-                  name="tipo"
-                  value="pre-order"
-                  class="minimal-radio"
-                />
+                <input type="radio" name="tipo" value="pre_orden" class="minimal-radio" required>
                 Pre orden
               </label>
               <label>
-                <input
-                  type="radio"
-                  name="tipo"
-                  value="edicion-especial"
-                  class="minimal-radio"
-                />
+                <input type="radio" name="tipo" value="edicion_especial" class="minimal-radio" required>
                 Edición especial
               </label>
             </div>
-
             <label>
-              <input type="checkbox" class="minimal-checkbox" /> Envío nacional
+              <input type="checkbox" class="minimal-checkbox" name="envio_nacional">
+              Envío nacional
             </label>
-
-            <select class="minimal-select">
-              <option value="" disabled selected>
-                Selecciona el género del álbum
-              </option>
+            <select class="minimal-select" name="genero_album" required>
+              <option value="" disabled selected>Selecciona el género del álbum</option>
               <option value="rock">Rock</option>
               <option value="pop">Pop</option>
               <option value="jazz">Jazz</option>
               <option value="clasica">Clásica</option>
               <option value="hip-hop">Hip-hop</option>
             </select>
-
-            <div
-              style="
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 30px;
-              "
-            >
+            <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
               <button type="submit" class="minimal-button">Enviar</button>
             </div>
           </form>
@@ -191,5 +157,23 @@
         Desarrollado por Cedillo, Pineda y Estrella. 2024
       </div>
     </footer>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Previene la recarga de la página
+          var formData = new FormData(this); // Captura los datos del formulario
+
+          // Realiza la solicitud AJAX
+          fetch('../scripts/pedidos.php', {
+              method: 'POST',
+              body: formData
+          })
+          .then(response => response.text()) // Convierte la respuesta a texto
+          .then(html => {
+              // Mostrar mensaje
+              alert(html); // Muestra la respuesta del servidor en un alerta
+          })
+          .catch(error => console.error('Error en la solicitud AJAX:', error));
+      });
+  </script>
   </body>
 </html>
