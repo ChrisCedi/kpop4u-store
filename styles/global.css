@@ -4,6 +4,10 @@ body {
   height: 100vh;
 }
 
+main {
+  min-height: 100%;
+}
+
 .styled-button {
   background-color: #589feb;
   border: none;
@@ -37,4 +41,9 @@ header {
 
 .title-header {
   padding-left: 30px;
+}
+
+footer {
+  padding: 60px 40px;
+  background-color: #eadfdf;
 }
