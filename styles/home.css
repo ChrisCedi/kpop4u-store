@@ -87,6 +87,14 @@
   height: 450px;
 }
 
+.box-video {
+  background-color: #eadfdf;
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media (max-width: 950px) {
   .cards-container {
     display: grid;
