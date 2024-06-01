@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/contact.css" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/svg/disc.svg" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title-header">KPOP4U</h1>
+    </header>
+    <div class="contact-container">
+      <div class="section-contact">
+        <div class="column">
+          <h2>Envíanos tu solicitud</h2>
+          <p style="text-align: center">
+            <b>Cuéntanos qué buscas:</b> Completa el formulario a continuación
+            con los detalles del álbum, artista o edición especial que deseas.
+          </p>
+          <form>
+            <input
+              type="text"
+              class="minimal-input"
+              placeholder="Nombre del álbum"
+            />
+            <input
+              type="text"
+              class="minimal-input"
+              placeholder="Nombre del artista o banda"
+            />
+            <input
+              type="email"
+              class="minimal-input"
+              placeholder="Correo electrónico de contacto"
+            />
+
+            <div class="radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="tipo"
+                  value="pre-order"
+                  class="minimal-radio"
+                />
+                Pre orden
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="tipo"
+                  value="edicion-especial"
+                  class="minimal-radio"
+                />
+                Edición especial
+              </label>
+            </div>
+
+            <label>
+              <input type="checkbox" class="minimal-checkbox" /> Envío nacional
+            </label>
+
+            <select class="minimal-select">
+              <option value="" disabled selected>
+                Selecciona el género del álbum
+              </option>
+              <option value="rock">Rock</option>
+              <option value="pop">Pop</option>
+              <option value="jazz">Jazz</option>
+              <option value="clasica">Clásica</option>
+              <option value="hip-hop">Hip-hop</option>
+            </select>
+
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+              "
+            >
+              <button type="submit" class="minimal-button">Enviar</button>
+            </div>
+          </form>
+        </div>
+        <div class="column">
+          <h2>Sigue nuestras redes</h2>
+          <p style="text-align: center; margin: 20px 60px">
+            No te pierdas ningún lanzamiento, tenemos toda la información que
+            necesitas y muchas sorpresas
+          </p>
+          <div class="box-icons">
+            <a
+              href="https://wa.me/5583168743"
+              target="_blank"
+              class="whatsapp-button"
+            >
+              <img
+                style="height: 80px"
+                class="icon"
+                src="../assets/jpg/whats-icon.png"
+                alt="whts"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/btspop2"
+              target="_blank"
+              class="whatsapp-button"
+            >
+              <img
+                class="icon"
+                style="height: 60px"
+                src="../assets/jpg/face-icon.png"
+                alt="face"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/kpop.eventsmx/"
+              target="_blank"
+              class="whatsapp-button"
+            >
+              <img
+                class="icon"
+                style="height: 60px"
+                src="../assets/jpg/insta-icon.png"
+                alt="face"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
