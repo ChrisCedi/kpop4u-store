@@ -11,7 +11,16 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="title-header">KPOP4U</h1>
+      <a href="../index.html" style="text-decoration: none; color: black">
+        <h1 class="title-header">KPOP4U</h1>
+      </a>
+      
+      <div style="padding-right: 30px">
+          <p style="font-size: 11px">Cedillo Palacios Christian Javier</p>
+          <p style="font-size: 11px">Rodríguez Estrella Mairol Elizabeth</p>
+          <p style="font-size: 11px">Pineda González Rodrigo</p>
+        </div>
+      </header>
     </header>
     <div class="contact-container">
       <div class="section-contact">
@@ -22,32 +31,75 @@
             con los detalles del álbum, artista o edición especial que deseas.
           </p>
           <form id="contactForm" method="POST">
-            <input type="text" class="minimal-input" name="nombre_album" placeholder="Nombre del álbum" required>
-            <input type="text" class="minimal-input" name="nombre_artista" placeholder="Nombre del artista o banda" required>
-            <input type="email" class="minimal-input" name="correo_electronico" placeholder="Correo electrónico de contacto" required>
+            <input
+              type="text"
+              class="minimal-input"
+              name="nombre_album"
+              placeholder="Nombre del álbum"
+              required
+            />
+            <input
+              type="text"
+              class="minimal-input"
+              name="nombre_artista"
+              placeholder="Nombre del artista o banda"
+              required
+            />
+            <input
+              type="email"
+              class="minimal-input"
+              name="correo_electronico"
+              placeholder="Correo electrónico de contacto"
+              required
+            />
             <div class="radio-group">
               <label>
-                <input type="radio" name="tipo" value="pre_orden" class="minimal-radio" required>
+                <input
+                  type="radio"
+                  name="tipo"
+                  value="pre_orden"
+                  class="minimal-radio"
+                  required
+                />
                 Pre orden
               </label>
               <label>
-                <input type="radio" name="tipo" value="edicion_especial" class="minimal-radio" required>
+                <input
+                  type="radio"
+                  name="tipo"
+                  value="edicion_especial"
+                  class="minimal-radio"
+                  required
+                />
                 Edición especial
               </label>
             </div>
             <label>
-              <input type="checkbox" class="minimal-checkbox" name="envio_nacional">
+              <input
+                type="checkbox"
+                class="minimal-checkbox"
+                name="envio_nacional"
+              />
               Envío nacional
             </label>
             <select class="minimal-select" name="genero_album" required>
-              <option value="" disabled selected>Selecciona el género del álbum</option>
+              <option value="" disabled selected>
+                Selecciona el género del álbum
+              </option>
               <option value="rock">Rock</option>
               <option value="pop">Pop</option>
               <option value="jazz">Jazz</option>
               <option value="clasica">Clásica</option>
               <option value="hip-hop">Hip-hop</option>
             </select>
-            <div style="width: 100%; display: flex; justify-content: center; margin-top: 30px;">
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+              "
+            >
               <button type="submit" class="minimal-button">Enviar</button>
             </div>
           </form>
@@ -153,27 +205,32 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; justify-content: center">
-        Desarrollado por Cedillo, Pineda y Estrella. 2024
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: center">
+       <p> Desarrollado por Cedillo, Pineda y Estrella.</p>
+       <p>Última modificación: 31 de mayo del 2024</p>
       </div>
     </footer>
     <script>
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
           event.preventDefault(); // Previene la recarga de la página
           var formData = new FormData(this); // Captura los datos del formulario
 
           // Realiza la solicitud AJAX
-          fetch('../scripts/pedidos.php', {
-              method: 'POST',
-              body: formData
+          fetch("../scripts/pedidos.php", {
+            method: "POST",
+            body: formData,
           })
-          .then(response => response.text()) // Convierte la respuesta a texto
-          .then(html => {
+            .then((response) => response.text()) // Convierte la respuesta a texto
+            .then((html) => {
               // Mostrar mensaje
               alert(html); // Muestra la respuesta del servidor en un alerta
-          })
-          .catch(error => console.error('Error en la solicitud AJAX:', error));
-      });
-  </script>
+            })
+            .catch((error) =>
+              console.error("Error en la solicitud AJAX:", error)
+            );
+        });
+    </script>
   </body>
 </html>
