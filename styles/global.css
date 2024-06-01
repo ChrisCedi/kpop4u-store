@@ -37,10 +37,17 @@ header {
   width: 100%;
   position: fixed;
   z-index: 1;
+  display: flex;
+  justify-content: space-between;
 }
 
 .title-header {
   padding-left: 30px;
+  text-decoration: none;
+}
+
+.title-header:hover {
+  cursor: pointer;
 }
 
 footer {
